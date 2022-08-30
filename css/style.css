@@ -45,7 +45,7 @@ img {
 
 header {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url('images/info.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url('../images/bg-image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -61,9 +61,7 @@ padding: 2% 8%;
 display: flex;
 justify-content: space-between;
 }
-nav box-icon {
-    display: none;
-}
+
 nav ul {
     list-style-type: none;
     padding-top: 1rem;
@@ -76,6 +74,10 @@ nav ul li a:hover {
     color: #4CAF50;
     transition: .5s ease-in-out;
 }
+nav .open-menu {
+    display: none;
+}
+
 .header-content {
     width: 55%;
     position: relative;
@@ -263,32 +265,46 @@ footer {
 
 
 @media only screen and (max-width:768px) {
-    nav {
+    nav { 
         flex-direction: column;
         position: relative;
     }
-    nav box-icon {
+    
+    nav .open-menu {
+        font-size: 2.6rem;
         display: block;
         position: absolute;
-        top: 23px;
-        right: 32px;
+        top: 18px;
+        right: 7px;;
+        cursor: pointer;
+        color: #4CAF50;
+
     }
+    
     nav ul {
-        background-color: whitesmoke;
+        background-color: transparent;
+        opacity: 1;
         display: none;
     }
     .showmenu {
         display: block;
     }
+   
     nav ul li {
         display: block;
         padding: 2% 0;
     }
     nav ul li a {
-        color: #222;
+        display: flex;
+        justify-content: center;
+        color: whitesmoke;
     }
     .row {
         flex-direction: column;
+    }
+    header {
+        height: 100%;
+        padding: 15%;
     }
     .header-content {
         text-align: center;
